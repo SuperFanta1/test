@@ -1,0 +1,24 @@
+网关地址：
+网络：vmnet8
+子网IP：192.168.20.0
+子网掩码：255.255.255.0
+网关：192.168.20.2
+
+master:
+MAC: 00:0C:29:43:68:22
+IPV4: 192.168.20.3
+
+slave1:
+ATTR(address)=="00:50:56:20:5E:00"
+IPV4: 192.168.20.4
+NAME="eth0"
+
+slave2：
+ATTR(address)=="00:50:56:20:16:89"
+IPV4: 192.168.20.5
+
+修改每台虚拟机的hosts(vim /etc/hosts):
+192.168.20.3 master www.master.com
+192.168.20.4 slave1 www.slave1.com
+192.168.20.5 slave2 www.slave2.com
+
