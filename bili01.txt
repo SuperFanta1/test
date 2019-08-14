@@ -1,0 +1,27 @@
+#迭代打印列表
+movies = ["肖申克的救赎",1994,"弗兰克·德拉邦特",142,
+            ['蒂姆·罗宾斯',
+            ['摩根·弗里曼','鲍勃·冈顿','威廉姆·赛德勒']],
+            "霸王别姬",
+            "大话西游"]
+print("movies = {}".format(movies))
+
+for each_item in movies:
+    if isinstance(each_item,list):
+        for nested_item in each_item:
+            if isinstance(nested_item,list):
+                for deeper_item in nested_item:
+                    print(deeper_item)
+            else:
+                print(nested_item)
+    else:
+        print(each_item)
+
+#递归打印列表
+def print_list(the_list):
+    for each_item in the_list:
+        if isinstance(each_item,list):
+            print_list(each_item)
+        else:
+            print(each_item)
+print_list(movies)
